@@ -1,0 +1,18 @@
+group 'com.test'
+version '0.01-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // External dependencies
+  //  compile ('org.springframework.boot:spring:book-starter-web')
+
+    //Test dependencies
+    testCompile ('junit:junit:4.12')
+}
