@@ -1,1 +1,2 @@
 include 'kodilla-testing'
+include 'kodilla-calculator'
