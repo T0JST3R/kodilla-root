@@ -1,6 +1,7 @@
 package com.kodilla.stream;
 
 
+import com.kodilla.stream.array.ArrayOperations;
 import com.kodilla.stream.book.Book;
 import com.kodilla.stream.book.BookDirectory;
 import com.kodilla.stream.com.kodilla.stream.forumuser.Forum;
@@ -27,6 +28,10 @@ public class StreamMain {
 
         userMap.entrySet().stream()
                 .forEach(System.out::println);
+
+
+
+
 
 
 

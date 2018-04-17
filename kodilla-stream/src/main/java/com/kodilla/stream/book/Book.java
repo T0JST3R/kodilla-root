@@ -28,21 +28,26 @@ public class Book {
     }
 
     @Override
-    public int hashCode() {
-
-
-    public String getSignature() {
-        return signature;
-    }
-
-    @Override
     public String toString() {
         return "Book{" +
                 "author='" + author + '\'' +
                 ", title='" + title + '\'' +
                 ", yearOfPublication=" + yearOfPublication +
+                ", signature='" + signature + '\'' +
                 '}';
     }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(author, title, yearOfPublication, signature);
+    }
+
+    public String getSignature() {
+        return signature;
+    }
+
+
 
     public int getYearOfPublication() {
         return yearOfPublication;
