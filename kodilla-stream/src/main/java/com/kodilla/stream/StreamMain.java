@@ -1,18 +1,13 @@
 package com.kodilla.stream;
 
 
-import com.kodilla.stream.array.ArrayOperations;
-import com.kodilla.stream.book.Book;
-import com.kodilla.stream.book.BookDirectory;
 import com.kodilla.stream.com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.com.kodilla.stream.forumuser.ForumUser;
-import com.kodilla.stream.com.kodilla.stream.person.People;
 import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.beautifier.PoemDecorator;
 import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.Executor;
 import com.kodilla.stream.lambda.Processor;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
