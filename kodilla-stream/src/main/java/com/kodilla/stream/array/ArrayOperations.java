@@ -18,10 +18,9 @@ public interface ArrayOperations {
                 .map(i -> numbers[i])
                 .average();
 
-        double result1 = result.getAsDouble();
 
 
-        return result1;
+        return result.getAsDouble();
 
     }
 }

@@ -8,10 +8,14 @@ import com.kodilla.stream.beautifier.PoemDecorator;
 import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.Executor;
 import com.kodilla.stream.lambda.Processor;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import static java.time.temporal.ChronoUnit.YEARS;
 
 public class StreamMain {
     public static void main(String[] args) {
@@ -21,7 +25,7 @@ public class StreamMain {
 
         Map<Integer , ForumUser> userMap = forum.getUserList().stream()
                 .filter(s -> s.getSex() == 'M')
-                .filter(s -> s.getDateOfBirth().getDayOfYear() < 1998)
+                .filter(s -> YEARS.between(s.getDateOfBirth() , LocalDate.now() ) >= 20 )
                 .filter(s -> s.getPostsQuantity() >= 1)
                 .collect(Collectors.toMap(ForumUser::getUniqueID , s -> s ));
 
@@ -45,6 +49,10 @@ public class StreamMain {
         poemBeautifier.beautifier(decorator1);
         poemBeautifier.beautifier(decorator2);
         poemBeautifier.beautifier(decorator3);
+
+
+        //even generator
+
         System.out.println("Using Stream to generate even numbers from 1 to 20");
         NumbersGenerator.generateEven(20);
 
