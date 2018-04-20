@@ -2,9 +2,9 @@ package exception.test;
 
 public class FirstChallenge {
 
-    public double divide(double b, double a) throws ArithmeticException {
+    public double divide(double a, double b) throws ArithmeticException {
         try {
-            if (a == 0) {
+            if (b == 0) {
                 throw new ArithmeticException();
             }
 
@@ -14,11 +14,15 @@ public class FirstChallenge {
         } finally {
             System.out.println("Thank for using calculator! Result is : ");
         }
-
-        return b / a;
+        return a / b;
 
     }
 
+    /**
+     * This main can throw an ArithmeticException!!!
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         FirstChallenge firstChallenge = new FirstChallenge();
