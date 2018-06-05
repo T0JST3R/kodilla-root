@@ -3,8 +3,8 @@ package com.kodilla.stream.beautifier;
 public class PoemBeautifier {
 
 
-    public void beautifier ( PoemDecorator poemDecorator){
+    public String beautifier ( String text , PoemDecorator poemDecorator ){
 
-        poemDecorator.decorate();
+      return  poemDecorator.decorate(text);
     }
 }

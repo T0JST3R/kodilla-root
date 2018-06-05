@@ -33,7 +33,8 @@ public final class TaskList {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TaskList taskList = (TaskList) o;
-        return Objects.equals(tasks, taskList.tasks) &&
+        return
+                Objects.equals(tasks, taskList.tasks) &&
                 Objects.equals(name, taskList.name);
     }
 

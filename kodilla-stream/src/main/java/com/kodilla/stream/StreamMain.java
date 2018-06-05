@@ -41,14 +41,14 @@ public class StreamMain {
         Executor codeToExecute = () -> System.out.println("This is an example text.");
         processor.execute(codeToExecute);
         PoemBeautifier poemBeautifier = new PoemBeautifier();
-        PoemDecorator decorator = () -> System.out.println("text".toUpperCase());
-        PoemDecorator decorator1 = () -> System.out.println("DwaRazyDwa".toLowerCase());
-        PoemDecorator decorator2 = () -> System.out.println("      CzyPiencDwa     ".trim());
-        PoemDecorator decorator3 = () -> System.out.println("Czy plus dwa = czterdziesci".substring(0 , 20) + "y");
-        poemBeautifier.beautifier(decorator);
-        poemBeautifier.beautifier(decorator1);
-        poemBeautifier.beautifier(decorator2);
-        poemBeautifier.beautifier(decorator3);
+        PoemDecorator decorator = (text) -> text.toUpperCase();
+        PoemDecorator decorator1 = (text) -> text.toLowerCase();
+        PoemDecorator decorator2 = (text) -> text.trim();
+        PoemDecorator decorator3 = (text) -> text.substring(0 , 20) + "y";
+        System.out.println( poemBeautifier.beautifier("Text  " ,decorator));
+        System.out.println(poemBeautifier.beautifier("TExt   3", decorator1));
+        System.out.println(poemBeautifier.beautifier(" Text  ", decorator2));
+        System.out.println(poemBeautifier.beautifier("Loooooooonggg striiing", decorator3));
 
 
         //even generator

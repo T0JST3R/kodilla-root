@@ -1,4 +1,10 @@
 include 'kodilla-testing'
 include 'kodilla-calculator'
 include 'kodilla-stream'
+include 'Rock , Paper , Scissors'
+include 'kodilla-exception'
+include 'kodilla-good-patterns'
+include 'kodilla-spring-intro'
+include 'kodilla.patterns'
+include 'kodilla-jdbc'
 

@@ -3,19 +3,12 @@ package exception.test;
 public class FirstChallenge {
 
     public double divide(double a, double b) throws ArithmeticException {
-        try {
-            if (b == 0) {
-                throw new ArithmeticException();
-            }
+        if (b == 0) {
+            throw new ArithmeticException();
 
-        } catch (ArithmeticException e) {
-            System.out.println("Don't divide by zero! :" + e);
 
-        } finally {
-            System.out.println("Thank for using calculator! Result is : ");
         }
-        return a / b;
-
+        return a/b;
     }
 
     /**
@@ -27,10 +20,14 @@ public class FirstChallenge {
 
         FirstChallenge firstChallenge = new FirstChallenge();
 
-        double result = firstChallenge.divide(3, 0);
+        try {
+            double result = firstChallenge.divide(3, 0);
 
-        System.out.println(result);
-
+            System.out.println(result);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("don't divie by 0! " + e);
+        }
     }
 }
 

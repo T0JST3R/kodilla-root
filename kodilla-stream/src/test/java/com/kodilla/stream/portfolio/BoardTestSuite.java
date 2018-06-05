@@ -145,21 +145,19 @@ public class BoardTestSuite {
         Board project = prepareTestData();
 
         //When
-        List<TaskList> inProgressTasks = new ArrayList<>();
-        inProgressTasks.add(new TaskList("In progress"));
-        //When
 
-//        List<TaskList> list = project.getTaskLists().stream()
-//                .filter(inProgressTasks::contains)
-//                .collect(toList());
-//        System.out.println(list.size());
 
-      double result =  project.getTaskLists().stream()
+        double in_progress = project.getTaskLists().stream()
+                .filter(taskList -> taskList.getName().equals("In progress"))
                 .flatMap(tl -> tl.getTasks().stream())
                 .filter(tl -> LocalDate.now().isAfter(tl.getDeadline()))
                 .mapToDouble(tl -> DAYS.between(tl.getCreated(), LocalDate.now()))
                 .average().getAsDouble();
-        System.out.println(result);
+
+        //Then
+
+        Assert.assertEquals(20, in_progress, 0);
+
 
     }
 }
