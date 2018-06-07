@@ -9,6 +9,7 @@ public class Product {
     int id;
     String name;
     Item item;
+    @ManyToOne
     @JoinColumn(name = "Item_ID")
     public Item getItem() {
         return item;
@@ -18,8 +19,7 @@ public class Product {
         this.item = item;
     }
 
-    public Product(int id, String name) {
-        this.id = id;
+    public Product(String name) {
         this.name = name;
     }
     @NotNull

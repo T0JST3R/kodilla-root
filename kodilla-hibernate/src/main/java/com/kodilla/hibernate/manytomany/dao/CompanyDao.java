@@ -9,4 +9,5 @@ import javax.transaction.Transactional;
 @Transactional
 public interface CompanyDao extends CrudRepository<Company, Integer> {
 
+
 }

@@ -5,20 +5,20 @@ import com.kodilla.hibernate.invoice.Product;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "ITEM")
 public class Item {
     int id;
-    Product product;
+    List<Product> products = new ArrayList<>();
     BigDecimal price;
     int quantity;
     BigDecimal value;
     Invoice invoice;
 
-    public Item(int id, Product product, BigDecimal price, int quantity, BigDecimal value) {
-        this.id = id;
-        this.product = product;
+    public Item(BigDecimal price, int quantity, BigDecimal value) {
         this.price = price;
         this.quantity = quantity;
         this.value = value;
@@ -26,7 +26,15 @@ public class Item {
 
     public Item() {
     }
+    @OneToMany
+    @JoinColumn(name = "Invoice_ID")
+    public Invoice getInvoice() {
+        return invoice;
+    }
 
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
+    }
 
     @Id
     @GeneratedValue
@@ -46,13 +54,15 @@ public class Item {
             fetch = FetchType.LAZY,
             mappedBy = "item"
     )
-    public Product getProduct() {
-        return product;
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
+
+
 
     @Column(name = "PRICE")
     public BigDecimal getPrice() {
