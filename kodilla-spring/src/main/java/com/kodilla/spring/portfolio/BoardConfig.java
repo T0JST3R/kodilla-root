@@ -12,7 +12,7 @@ public class BoardConfig {
     @Bean
     public TaskList taskList1(){
         TaskList taskList1 = new TaskList();
-        taskList1.tasks.add("Task 1");
+        taskList1.getTasks().add("Task 1");
         return taskList1;
     }
     @Bean
