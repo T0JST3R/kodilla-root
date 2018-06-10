@@ -46,7 +46,7 @@ public class ForumTestSuite {
 
 
 
-    //Calculator test
+    //calculator test
     @Test
     public void testCalculator(){
 
