@@ -147,7 +147,7 @@ public class BoardTestSuite {
         //When
 
 
-        double in_progress = project.getTaskLists().stream()
+        double tasksInProgressCounter = project.getTaskLists().stream()
                 .filter(taskList -> taskList.getName().equals("In progress"))
                 .flatMap(tl -> tl.getTasks().stream())
                 .filter(tl -> LocalDate.now().isAfter(tl.getDeadline()))
@@ -156,7 +156,7 @@ public class BoardTestSuite {
 
         //Then
 
-        Assert.assertEquals(20, in_progress, 0);
+        Assert.assertEquals(20, tasksInProgressCounter, 0);
 
 
     }
