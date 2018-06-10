@@ -1,4 +1,5 @@
 package com.kodilla.testing.forum;
+
 import com.kodilla.testing.Calculator;
 import com.kodilla.testing.user.SimpleUser;
 import org.junit.*;
@@ -7,17 +8,20 @@ import static org.junit.Assert.assertEquals;
 
 public class ForumTestSuite {
     @Before
-    public void before(){
+    public void before() {
         System.out.println("Test Case: begin");
     }
+
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test Case: end");
     }
+
     @BeforeClass
     public static void beforeClass() {
         System.out.println("Test Suite: begin");
     }
+
     @AfterClass
     public static void afterClass() {
         System.out.println("Test Suite: end");
@@ -27,7 +31,7 @@ public class ForumTestSuite {
     @Test
     public void testSimpleUser() {
         //Given
-        SimpleUser simpleUser = new SimpleUser("theForumUser" , "Waldemar Mlot");
+        SimpleUser simpleUser = new SimpleUser("theForumUser", "Waldemar Mlot");
         // When
         String result = simpleUser.getUsername();
         System.out.println("Testing :" + result);
@@ -38,27 +42,18 @@ public class ForumTestSuite {
             System.out.println("Error!");
         }
     }
-
-
-
-
-
-
-
-
     //calculator test
     @Test
-    public void testCalculator(){
-
+    public void testCalculator() {
 
         Calculator compute = new Calculator();
 
-        double result11 = compute.addAtoB(5 ,5);
-        double result22 = compute.substractAfromB(5 , 5);
-        assertEquals(10 , result11 ,0);
-        assertEquals(0 , result22 , 0);
+        double result11 = compute.addAtoB(5, 5);
+        double result22 = compute.substractAfromB(5, 5);
+        assertEquals(10, result11, 0);
+        assertEquals(0, result22, 0);
 
     }
-    }
+}
 
 
