@@ -1,12 +1,12 @@
-package com.kodilla.spring.Calculator;
+package com.kodilla.spring.calculator;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class Display {
 
-    public void displayValue(Double result){
+    public void displayValue(double val){
 
-        System.out.println(result);
+        System.out.println(val);
     }
 }

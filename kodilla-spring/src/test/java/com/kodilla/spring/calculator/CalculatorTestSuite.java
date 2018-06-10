@@ -1,6 +1,5 @@
 package com.kodilla.spring.calculator;
 
-import com.kodilla.spring.Calculator.Calculator;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,12 +23,16 @@ public class CalculatorTestSuite {
         Double res2 = calculator.sub(8, 2);
         Double res3 = calculator.mul(2, 3);
         Double res4 = calculator.div(36, 6);
+        Double res5 = calculator.div(36, 0);
+        Double res6 = calculator.div(36, 0.0);
 
         //Then
         Assert.assertEquals(6, res1, 0);
         Assert.assertEquals(6, res2, 0);
         Assert.assertEquals(6, res3, 0);
         Assert.assertEquals(6, res4, 0);
+        Assert.assertTrue(Double.isInfinite(res5));
+        Assert.assertTrue(Double.isInfinite(res6));
 
     }
 }
