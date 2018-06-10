@@ -4,15 +4,22 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Flight {
-   public final String from;
-    public final String to;
-    public final String through;
-    public final String departure;
-    public final String arrival;
-    public static String WROCLAW = "Wroclaw";
-    public static String POZNAN = "Poznan";
-    public static String KRAKOW = "Krakow";
 
+    private final String from;
+
+    private final String to;
+
+    private final String through;
+
+    private final String departure;
+
+    private final String arrival;
+
+    public static final String WROCLAW = "Wroclaw";
+
+    public static final String POZNAN = "Poznan";
+
+    public static final String KRAKOW = "Krakow";
 
     public Flight(String from, String to, String through, String departure, String arrival) {
         this.from = from;
@@ -42,12 +49,14 @@ public class Flight {
         Flight flight = (Flight) o;
         return Objects.equals(from, flight.from) &&
                 Objects.equals(to, flight.to) &&
-                Objects.equals(through, flight.through);
+                Objects.equals(through, flight.through) &&
+                Objects.equals(departure, flight.departure) &&
+                Objects.equals(arrival, flight.arrival);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(from, to, through);
+        return Objects.hash(from, to, through, departure, arrival);
     }
 }
