@@ -15,7 +15,6 @@ public class ExceptionHandling {
 
 
         } catch (Exception e) {
-            System.out.println("Exception! - " + e.getMessage());
             LOGGER.log(Level.SEVERE , "Exception" , e);
         } finally {
             System.out.println("Program finished work");
