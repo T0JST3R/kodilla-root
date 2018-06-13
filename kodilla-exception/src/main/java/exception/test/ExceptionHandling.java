@@ -12,7 +12,7 @@ public class ExceptionHandling {
 
         try {
             secondChallenge.probablyIWillThrowException(3, 3);
-          //  secondChallenge.probablyIWillThrowException(3, 4);
+
 
         } catch (Exception e) {
             System.out.println("Exception! - " + e.getMessage());
