@@ -11,12 +11,12 @@ import java.util.List;
 @Entity
 @Table(name = "ITEM")
 public class Item {
-    int id;
-    List<Product> products = new ArrayList<>();
-    BigDecimal price;
-    int quantity;
-    BigDecimal value;
-    Invoice invoice;
+    private int id;
+    private List<Product> products = new ArrayList<>();
+    private BigDecimal price;
+    private int quantity;
+    private BigDecimal value;
+    private Invoice invoice;
 
     public Item(BigDecimal price, int quantity, BigDecimal value) {
         this.price = price;
@@ -26,6 +26,7 @@ public class Item {
 
     public Item() {
     }
+
     @OneToMany
     @JoinColumn(name = "Invoice_ID")
     public Invoice getInvoice() {
@@ -61,7 +62,6 @@ public class Item {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
-
 
 
     @Column(name = "PRICE")

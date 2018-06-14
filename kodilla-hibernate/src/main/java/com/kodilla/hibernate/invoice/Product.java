@@ -6,9 +6,10 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "PRODUCT")
 public class Product {
-    int id;
-    String name;
-    Item item;
+    private int id;
+    private String name;
+    private Item item;
+
     @ManyToOne
     @JoinColumn(name = "Item_ID")
     public Item getItem() {
@@ -22,6 +23,7 @@ public class Product {
     public Product(String name) {
         this.name = name;
     }
+
     @NotNull
     @Id
     @GeneratedValue
