@@ -1,4 +1,8 @@
-package good.patterns.challenges.foodToDoor;
+package good.patterns.challenges.foodToDoor.companiesProcessors;
+
+import good.patterns.challenges.foodToDoor.Customer;
+import good.patterns.challenges.foodToDoor.messageSenders.MessageSender;
+import good.patterns.challenges.foodToDoor.Order;
 
 public class ExtraFoodShopProcessor implements Processor {
     @Override

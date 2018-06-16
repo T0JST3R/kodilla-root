@@ -1,5 +1,10 @@
 package good.patterns.challenges.foodToDoor;
 
+import good.patterns.challenges.foodToDoor.messageSenders.MailSender;
+import good.patterns.challenges.foodToDoor.messageSenders.MessageSender;
+import good.patterns.challenges.foodToDoor.products.ExampleProduct;
+import good.patterns.challenges.foodToDoor.products.Product;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,6 +1,7 @@
 package good.patterns.challenges.foodToDoor;
 
-import java.util.List;
+import good.patterns.challenges.foodToDoor.companiesProcessors.Processor;
+import good.patterns.challenges.foodToDoor.messageSenders.MessageSender;
 
 public class Company {
     private String companyName;

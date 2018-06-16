@@ -1,6 +1,4 @@
-package good.patterns.challenges.orderService;
-
-import java.util.Objects;
+package good.patterns.challenges.orderService.products;
 
 public class Pen extends Product {
 

@@ -1,7 +1,6 @@
 package good.patterns.challenges.foodToDoor;
 
-import java.util.ArrayList;
-import java.util.List;
+import good.patterns.challenges.foodToDoor.companiesProcessors.ExtraFoodShopProcessor;
 
 public class ExtraFoodShop extends Company {
     public ExtraFoodShop(String companyName) {

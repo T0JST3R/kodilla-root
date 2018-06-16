@@ -1,4 +1,6 @@
-package good.patterns.challenges.orderService;
+package good.patterns.challenges.orderService.orderProcessors;
+
+import good.patterns.challenges.orderService.Order;
 
 public class OrderSender {
     private Order order;

@@ -1,10 +1,12 @@
 package good.patterns.challenges.orderService;
 
+import good.patterns.challenges.orderService.products.Product;
+
 import java.util.*;
 
 public class Order {
     private int number;
-    private Map<Product , Integer> products;
+    private Map<Product, Integer> products;
 
     public Order(int number, Map<Product, Integer> products) {
         this.number = number;
@@ -42,10 +44,8 @@ public class Order {
                 '}';
     }
 
-    public void addProduct(Product product , int howMany) {
-       products.put(product , howMany);
-    }
-    public Double getProductPrice(Product product){
-        return product.getPrice();
+    public void addProduct(Product product, int howMany) {
+        products.put(product, howMany);
     }
 }
+

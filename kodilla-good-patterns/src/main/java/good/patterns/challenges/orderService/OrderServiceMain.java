@@ -1,8 +1,16 @@
 package good.patterns.challenges.orderService;
 
-import java.util.ArrayList;
+import good.patterns.challenges.orderService.messageSenders.MailSender;
+import good.patterns.challenges.orderService.messageSenders.MessageSender;
+import good.patterns.challenges.orderService.orderProcessors.OrderCalculator;
+import good.patterns.challenges.orderService.orderProcessors.OrderProcessor;
+import good.patterns.challenges.orderService.orderProcessors.OrderSender;
+import good.patterns.challenges.orderService.products.Book;
+import good.patterns.challenges.orderService.products.Pen;
+import good.patterns.challenges.orderService.products.Product;
+import good.patterns.challenges.orderService.products.Tv;
+
 import java.util.HashMap;
-import java.util.List;
 
 public class OrderServiceMain {
     public static void main(String[] args) {
@@ -14,7 +22,7 @@ public class OrderServiceMain {
         products.put(book , 1);
         products.put(pen , 1);
         products.put(tv , 2);
-        User user = new User("Jan", "Nowak", 2);
+        User user = new User("Jan", "Nowak", 222);
         MessageSender messageSender = new MailSender();
         Order order = new Order(122, products);
         OrderCalculator orderCalculator = new OrderCalculator();

@@ -1,4 +1,8 @@
-package good.patterns.challenges.orderService;
+package good.patterns.challenges.orderService.orderProcessors;
+
+import good.patterns.challenges.orderService.Order;
+import good.patterns.challenges.orderService.User;
+import good.patterns.challenges.orderService.messageSenders.MessageSender;
 
 public class OrderProcessor {
     private final MessageSender messageSender;
@@ -48,7 +52,7 @@ public class OrderProcessor {
 
     public void processOrder() {
         if (orderCalculator.comparePriceWithWallet(order, user)) {
-            System.out.println(messageSender.sendSuccesfull(user, order));
+            System.out.println(messageSender.sendSuccesfull(user, order , orderCalculator));
             System.out.println(orderSender.sendOrder());
 
         } else System.out.println(messageSender.sendFailed(user));
