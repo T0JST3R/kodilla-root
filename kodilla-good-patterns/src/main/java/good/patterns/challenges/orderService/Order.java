@@ -1,18 +1,22 @@
 package good.patterns.challenges.orderService;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Order {
     private int number;
-    private List<Product> products = new ArrayList<>();
-    private User user;
+    private Map<Product , Integer> products;
 
-    public Order(int number, List<Product> products, User user) {
+    public Order(int number, Map<Product, Integer> products) {
         this.number = number;
         this.products = products;
-        this.user = user;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public Map<Product, Integer> getProducts() {
+        return products;
     }
 
     @Override
@@ -21,14 +25,13 @@ public class Order {
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
         return number == order.number &&
-                Objects.equals(products, order.products) &&
-                Objects.equals(user, order.user);
+                Objects.equals(products, order.products);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(number, products, user);
+        return Objects.hash(number, products);
     }
 
     @Override
@@ -39,20 +42,10 @@ public class Order {
                 '}';
     }
 
-    public Order(int number, List<Product> products) {
-        this.number = number;
-        this.products = products;
+    public void addProduct(Product product , int howMany) {
+       products.put(product , howMany);
     }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void addProduct(Product product) {
-        products.add(product);
+    public Double getProductPrice(Product product){
+        return product.getPrice();
     }
 }

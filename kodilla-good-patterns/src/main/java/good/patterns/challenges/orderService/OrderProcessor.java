@@ -14,6 +14,37 @@ public class OrderProcessor {
         this.user = user;
         this.orderSender = orderSender;
     }
+    public static class OrderProcessorBuilder{
+        private  MessageSender messageSender;
+        private  Order order;
+        private  OrderCalculator orderCalculator;
+        private  User user;
+        private  OrderSender orderSender;
+
+        public OrderProcessorBuilder messageSender(MessageSender messageSender){
+            this.messageSender= messageSender;
+            return this;
+        }
+        public OrderProcessorBuilder order(Order order){
+            this.order = order;
+            return this;
+        }
+        public OrderProcessorBuilder OrderCalculator(OrderCalculator orderCalculator){
+            this.orderCalculator=orderCalculator;
+            return this;
+        }
+        public OrderProcessorBuilder user(User user){
+            this.user = user;
+            return this;
+        }
+        public OrderProcessorBuilder orderSender(OrderSender orderSender){
+            this.orderSender = orderSender;
+            return this;
+        }
+        public OrderProcessor build(){
+            return new OrderProcessor(messageSender , order , orderCalculator , user ,orderSender);
+        }
+    }
 
     public void processOrder() {
         if (orderCalculator.comparePriceWithWallet(order, user)) {

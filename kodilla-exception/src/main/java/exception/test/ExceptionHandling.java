@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 
 public class ExceptionHandling {
     private static final Logger LOGGER = Logger.getLogger(ExceptionHandling.class.toString());
+
     public static void main(String[] args) {
 
         SecondChallenge secondChallenge = new SecondChallenge();
@@ -15,7 +16,7 @@ public class ExceptionHandling {
 
 
         } catch (Exception e) {
-            LOGGER.log(Level.SEVERE , "Exception" , e);
+            LOGGER.log(Level.SEVERE, "Exception", e);
         } finally {
             System.out.println("Program finished work");
         }

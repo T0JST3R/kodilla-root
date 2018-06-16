@@ -4,7 +4,7 @@ public class MailSender implements MessageSender {
 
     @Override
     public String sendSuccesfull(User user, Order order) {
-        return "Dear " + user.getName() + " Your order has been sent!. Number of order is :  " + order.getNumber();
+        return "Dear " + user.getName() + " Your order has been sent!. Number of order is :  " + order.getNumber() + "your order:" + order.getProducts();
     }
 
     @Override

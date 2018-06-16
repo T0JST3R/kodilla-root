@@ -8,7 +8,7 @@ public class FirstChallenge {
 
 
         }
-        return a/b;
+        return a / b;
     }
 
     /**
@@ -24,8 +24,7 @@ public class FirstChallenge {
             double result = firstChallenge.divide(3, 0);
 
             System.out.println(result);
-        }
-        catch (ArithmeticException e) {
+        } catch (ArithmeticException e) {
             System.out.println("don't divie by 0! " + e);
         }
     }
