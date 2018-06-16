@@ -7,7 +7,7 @@ public class OrderSender {
         this.order = order;
     }
 
-    public String sendOrder(){
+    public String sendOrder() {
         return "Order has been sent!";
     }
 }

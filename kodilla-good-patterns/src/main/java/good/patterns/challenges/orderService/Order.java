@@ -21,13 +21,14 @@ public class Order {
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
         return number == order.number &&
-                Objects.equals(products, order.products);
+                Objects.equals(products, order.products) &&
+                Objects.equals(user, order.user);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(number, products);
+        return Objects.hash(number, products, user);
     }
 
     @Override
@@ -49,5 +50,9 @@ public class Order {
 
     public List<Product> getProducts() {
         return products;
+    }
+
+    public void addProduct(Product product) {
+        products.add(product);
     }
 }

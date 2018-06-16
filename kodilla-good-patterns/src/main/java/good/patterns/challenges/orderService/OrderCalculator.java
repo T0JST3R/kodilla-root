@@ -9,6 +9,6 @@ public class OrderCalculator {
         for (Product product : order.getProducts()) {
             result = result + product.getPrice();
         }
-        return (user.getMoney()>result);
+        return (user.getMoney() > result);
     }
 }

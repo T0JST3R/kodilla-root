@@ -1,11 +1,9 @@
 package good.patterns.challenges.orderService;
 
 public class MailSender implements MessageSender {
-    public MailSender() {
-    }
 
     @Override
-    public String sendSuccesfull(User user , Order order) {
+    public String sendSuccesfull(User user, Order order) {
         return "Dear " + user.getName() + " Your order has been sent!. Number of order is :  " + order.getNumber();
     }
 
