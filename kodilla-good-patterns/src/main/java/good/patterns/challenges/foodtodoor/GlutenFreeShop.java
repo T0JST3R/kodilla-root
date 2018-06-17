@@ -1,10 +1,10 @@
-package good.patterns.challenges.foodToDoor;
+package good.patterns.challenges.foodtodoor;
 
-import java.util.List;
+import good.patterns.challenges.foodtodoor.companiesProcessors.Processor;
 
 public class GlutenFreeShop extends Company {
-    public GlutenFreeShop(String companyName) {
-        super(companyName);
+    public GlutenFreeShop(String companyName , Processor processor) {
+        super(companyName, processor);
     }
 
 

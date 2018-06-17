@@ -1,14 +1,15 @@
-package good.patterns.challenges.foodToDoor;
+package good.patterns.challenges.foodtodoor;
 
-import good.patterns.challenges.foodToDoor.companiesProcessors.Processor;
-import good.patterns.challenges.foodToDoor.messageSenders.MessageSender;
+import good.patterns.challenges.foodtodoor.companiesProcessors.Processor;
+import good.patterns.challenges.foodtodoor.messageSenders.MessageSender;
 
-public class Company {
+public abstract class Company {
     private String companyName;
     protected Processor processor;
 
-    public Company(String companyName) {
+    public Company(String companyName , Processor processor) {
         this.companyName = companyName;
+        this.processor = processor;
     }
 
     public void process(Customer customer , Order order , MessageSender messageSender) {

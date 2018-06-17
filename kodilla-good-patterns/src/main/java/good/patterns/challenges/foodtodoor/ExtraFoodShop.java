@@ -1,10 +1,10 @@
-package good.patterns.challenges.foodToDoor;
+package good.patterns.challenges.foodtodoor;
 
-import good.patterns.challenges.foodToDoor.companiesProcessors.ExtraFoodShopProcessor;
+import good.patterns.challenges.foodtodoor.companiesProcessors.Processor;
 
 public class ExtraFoodShop extends Company {
-    public ExtraFoodShop(String companyName) {
-        super(companyName);
-        this.processor = new ExtraFoodShopProcessor();
+    public ExtraFoodShop(String companyName, Processor processor) {
+        super(companyName, processor);
     }
 }
+

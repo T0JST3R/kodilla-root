@@ -1,4 +1,4 @@
-package good.patterns.challenges.flightChallenge;
+package good.patterns.challenges.flightchallenge;
 
 import java.util.ArrayList;
 import java.util.List;

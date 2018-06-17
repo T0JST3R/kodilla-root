@@ -1,8 +1,8 @@
-package good.patterns.challenges.orderService.orderProcessors;
+package good.patterns.challenges.orderservice.orderprocessors;
 
-import good.patterns.challenges.orderService.Order;
-import good.patterns.challenges.orderService.User;
-import good.patterns.challenges.orderService.messageSenders.MessageSender;
+import good.patterns.challenges.orderservice.Order;
+import good.patterns.challenges.orderservice.User;
+import good.patterns.challenges.orderservice.messagesenders.MessageSender;
 
 public class OrderProcessor {
     private final MessageSender messageSender;
@@ -51,7 +51,7 @@ public class OrderProcessor {
     }
 
     public void processOrder() {
-        if (orderCalculator.comparePriceWithWallet(order, user)) {
+        if (orderCalculator.userHasEnoughMoney(order, user)) {
             System.out.println(messageSender.sendSuccesfull(user, order , orderCalculator));
             System.out.println(orderSender.sendOrder());
 

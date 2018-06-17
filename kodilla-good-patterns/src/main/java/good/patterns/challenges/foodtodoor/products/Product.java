@@ -1,4 +1,4 @@
-package good.patterns.challenges.foodToDoor.products;
+package good.patterns.challenges.foodtodoor.products;
 
 import java.util.Objects;
 

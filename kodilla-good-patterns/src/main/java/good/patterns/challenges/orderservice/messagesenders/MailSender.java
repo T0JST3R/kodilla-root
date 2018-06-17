@@ -1,8 +1,8 @@
-package good.patterns.challenges.orderService.messageSenders;
+package good.patterns.challenges.orderservice.messagesenders;
 
-import good.patterns.challenges.orderService.Order;
-import good.patterns.challenges.orderService.User;
-import good.patterns.challenges.orderService.orderProcessors.OrderCalculator;
+import good.patterns.challenges.orderservice.Order;
+import good.patterns.challenges.orderservice.User;
+import good.patterns.challenges.orderservice.orderprocessors.OrderCalculator;
 
 public class MailSender implements MessageSender {
 

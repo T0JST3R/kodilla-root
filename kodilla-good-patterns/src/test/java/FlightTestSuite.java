@@ -1,10 +1,8 @@
-import good.patterns.challenges.flightChallenge.Flight;
-import good.patterns.challenges.flightChallenge.FlightCenter;
+import good.patterns.challenges.flightchallenge.Flight;
+import good.patterns.challenges.flightchallenge.FlightCenter;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FlightTestSuite {

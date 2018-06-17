@@ -1,4 +1,4 @@
-package good.patterns.challenges.foodToDoor;
+package good.patterns.challenges.foodtodoor;
 
 public class Customer {
     private String name;

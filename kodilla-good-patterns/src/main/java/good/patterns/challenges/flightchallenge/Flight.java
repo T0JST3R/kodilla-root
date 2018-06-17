@@ -1,6 +1,5 @@
-package good.patterns.challenges.flightChallenge;
+package good.patterns.challenges.flightchallenge;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 public class Flight {

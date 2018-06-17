@@ -1,7 +1,7 @@
-package good.patterns.challenges.foodToDoor.messageSenders;
+package good.patterns.challenges.foodtodoor.messageSenders;
 
-import good.patterns.challenges.foodToDoor.Customer;
-import good.patterns.challenges.foodToDoor.Order;
+import good.patterns.challenges.foodtodoor.Customer;
+import good.patterns.challenges.foodtodoor.Order;
 
 public class MailSender implements MessageSender{
     @Override

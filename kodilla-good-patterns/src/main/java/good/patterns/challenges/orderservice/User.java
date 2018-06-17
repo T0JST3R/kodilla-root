@@ -1,4 +1,4 @@
-package good.patterns.challenges.orderService;
+package good.patterns.challenges.orderservice;
 
 
 import java.util.Objects;

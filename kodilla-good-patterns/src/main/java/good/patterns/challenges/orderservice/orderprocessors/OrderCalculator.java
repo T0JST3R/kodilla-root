@@ -1,22 +1,15 @@
-package good.patterns.challenges.orderService.orderProcessors;
+package good.patterns.challenges.orderservice.orderprocessors;
 
-import good.patterns.challenges.orderService.Order;
-import good.patterns.challenges.orderService.User;
-import good.patterns.challenges.orderService.products.Product;
+import good.patterns.challenges.orderservice.Order;
+import good.patterns.challenges.orderservice.User;
+import good.patterns.challenges.orderservice.products.Product;
 
 import java.util.Map;
 
 public class OrderCalculator {
-    public OrderCalculator() {
-    }
 
-    public boolean comparePriceWithWallet(Order order, User user) {
-        double result = 0.0;
-        for (Map.Entry<Product, Integer> entry : order.getProducts().entrySet()) {
-            result = result + (entry.getKey().getPrice() * entry.getValue());
-        }
-
-        return (result<user.getMoney());
+    public boolean userHasEnoughMoney(Order order, User user) {
+        return (getOrderPrice(order)<user.getMoney());
     }
 
     public double getOrderPrice(Order order){

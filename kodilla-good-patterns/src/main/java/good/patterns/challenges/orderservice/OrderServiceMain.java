@@ -1,14 +1,14 @@
-package good.patterns.challenges.orderService;
+package good.patterns.challenges.orderservice;
 
-import good.patterns.challenges.orderService.messageSenders.MailSender;
-import good.patterns.challenges.orderService.messageSenders.MessageSender;
-import good.patterns.challenges.orderService.orderProcessors.OrderCalculator;
-import good.patterns.challenges.orderService.orderProcessors.OrderProcessor;
-import good.patterns.challenges.orderService.orderProcessors.OrderSender;
-import good.patterns.challenges.orderService.products.Book;
-import good.patterns.challenges.orderService.products.Pen;
-import good.patterns.challenges.orderService.products.Product;
-import good.patterns.challenges.orderService.products.Tv;
+import good.patterns.challenges.orderservice.messagesenders.MailSender;
+import good.patterns.challenges.orderservice.messagesenders.MessageSender;
+import good.patterns.challenges.orderservice.orderprocessors.OrderCalculator;
+import good.patterns.challenges.orderservice.orderprocessors.OrderProcessor;
+import good.patterns.challenges.orderservice.orderprocessors.OrderSender;
+import good.patterns.challenges.orderservice.products.Book;
+import good.patterns.challenges.orderservice.products.Pen;
+import good.patterns.challenges.orderservice.products.Product;
+import good.patterns.challenges.orderservice.products.Tv;
 
 import java.util.HashMap;
 

@@ -1,6 +1,6 @@
-package good.patterns.challenges.orderService;
+package good.patterns.challenges.orderservice;
 
-import good.patterns.challenges.orderService.products.Product;
+import good.patterns.challenges.orderservice.products.Product;
 
 import java.util.*;
 
