@@ -19,9 +19,9 @@ public class OrderServiceMain {
         Product pen = new Pen("Super Pen", 11.44);
         Product tv = new Tv(12.33, "Clear vision tv");
         HashMap<Product, Integer> products = new HashMap<>();
-        products.put(book , 1);
-        products.put(pen , 1);
-        products.put(tv , 2);
+        products.put(book, 1);
+        products.put(pen, 1);
+        products.put(tv, 2);
         User user = new User("Jan", "Nowak", 222);
         MessageSender messageSender = new MailSender();
         Order order = new Order(122, products);

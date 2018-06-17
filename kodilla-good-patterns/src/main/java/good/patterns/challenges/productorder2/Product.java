@@ -2,10 +2,10 @@ package good.patterns.challenges.productorder2;
 
 public interface Product {
 
-    public String getName();
+    String getName();
 
-    public Integer getQuantity();
+    Integer getQuantity();
 
-    public Double getPrice();
+    Double getPrice();
 
 }
