@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class FascadeAspect {
-    Logger LOGGER = LoggerFactory.getLogger(FascadeAspect.class);
+public class FacadeAspect {
+    Logger LOGGER = LoggerFactory.getLogger(FacadeAspect.class);
 
     @Before("execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..))" + "&&args(orderDto , userId)&&target(object)")
     public void fascadeWatcher(OrderDto orderDto, Long userId, Object object) {
-        LOGGER.info("Method processOrder in class " + object.getClass() + " with arguments " + orderDto + " " + userId + " has been run");
+        LOGGER.info("Method processOrder in " + object.getClass() + " with arguments " + orderDto + " " + userId + " has been run");
     }
 }
