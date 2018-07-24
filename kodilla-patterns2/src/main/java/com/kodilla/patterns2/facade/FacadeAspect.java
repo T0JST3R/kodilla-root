@@ -15,5 +15,6 @@ public class FacadeAspect {
     @Before("execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..))" + "&&args(orderDto , userId)&&target(object)")
     public void fascadeWatcher(OrderDto orderDto, Long userId, Object object) {
         LOGGER.info("Method processOrder in " + object.getClass() + " with arguments " + orderDto + " " + userId + " has been run");
+
     }
 }
