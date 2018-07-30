@@ -1,11 +1,11 @@
 package com.kodilla.patterns.factory.tasks;
 
 public class PaintingTask implements Tasks {
-    String taskName;
-    String whatToPaint;
-    String color;
+    private String taskName;
+    private String whatToPaint;
+    private String color;
 
-    public PaintingTask(String taskName, String whatToPaint, String color) {
+    PaintingTask(String taskName, String whatToPaint, String color) {
         this.taskName = taskName;
         this.whatToPaint = whatToPaint;
         this.color = color;
@@ -25,16 +25,19 @@ public class PaintingTask implements Tasks {
         return taskName;
     }
 
+
     @Override
-    public String executeTask() {
-        return "Painted " + whatToPaint + " In color" + color;
+    public void executeTask() {
+        System.out.println("Painted " + whatToPaint + " In color" + color);
     }
 
     @Override
     public boolean isTaskExecuted() {
-        if (color == "white") {
-            return false;
-        }
-        else return true;
+        return color.equals("white");
     }
+
 }
+
+
+
+

@@ -1,35 +1,48 @@
 package patterns.factory.tasks;
 
+import com.kodilla.patterns.factory.tasks.PaintingTask;
 import com.kodilla.patterns.factory.tasks.TaskFactory;
 import com.kodilla.patterns.factory.tasks.Tasks;
+import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class TaskFactoryTestSuite {
     @Test
-    public void testPaintingTask(){
+    public void testPaintingTask() {
         //Given
         TaskFactory taskFactory = new TaskFactory();
         //When
         Tasks paintingTask = taskFactory.createTask(TaskFactory.PAINTINGTASK);
         //Then
-        System.out.println(paintingTask);
+        assertEquals("Paint", paintingTask.getTaskName());
+        assertFalse(paintingTask.isTaskExecuted());
+
+
     }
+
     @Test
-    public void testDrivingTask(){
+    public void testDrivingTask() {
         //Given
         TaskFactory taskFactory = new TaskFactory();
         //When
         Tasks drivingTask = taskFactory.createTask(TaskFactory.DRIVINGTASK);
         //Then
-        System.out.println(drivingTask);
+        assertEquals( "Drive" , drivingTask.getTaskName());
+        assertTrue(drivingTask.isTaskExecuted());
     }
+
     @Test
-    public void testShoppingTask(){
+    public void testShoppingTask() {
         //Given
         TaskFactory taskFactory = new TaskFactory();
         //When
         Tasks shoppingTask = taskFactory.createTask(TaskFactory.SHOPPINGTASK);
         //Then
-        System.out.println(shoppingTask);
+        assertEquals( "Buy bananas" , shoppingTask.getTaskName());
+        assertTrue( shoppingTask.isTaskExecuted());
     }
 }
