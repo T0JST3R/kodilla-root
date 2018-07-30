@@ -1,18 +1,16 @@
 package com.kodilla.patterns.strategy.social;
 
-public class User {
-    String name;
+public abstract class User {
+    private String name;
+    //Package-private
     SocialPublisher socialPublisher;
 
     public User(String name) {
         this.name = name;
     }
 
-    public void setSocialPublisher(SocialPublisher socialPublisher) {
-        this.socialPublisher = socialPublisher;
-    }
-    public String favouriteMedia(){
-       return socialPublisher.share();
+    public String sharePost() {
+        return socialPublisher.share();
     }
 
     @Override
