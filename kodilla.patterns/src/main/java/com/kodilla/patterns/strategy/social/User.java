@@ -2,8 +2,7 @@ package com.kodilla.patterns.strategy.social;
 
 public abstract class User {
     private String name;
-    //Package-private
-    SocialPublisher socialPublisher;
+    private SocialPublisher socialPublisher;
 
     public User(String name) {
         this.name = name;
@@ -19,5 +18,9 @@ public abstract class User {
                 "name='" + name + '\'' +
                 ", socialPublisher=" + socialPublisher +
                 '}';
+    }
+
+    public void setSocialPublisher(SocialPublisher socialPublisher) {
+        this.socialPublisher = socialPublisher;
     }
 }

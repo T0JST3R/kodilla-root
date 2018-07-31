@@ -1,21 +1,24 @@
 package patterns.strategy;
 
 import com.kodilla.patterns.strategy.social.*;
+import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class UserTestSuite {
     @Test
-    public void testDefaulSharingStrategies(){
+    public void testDefaulSharingStrategies() {
+        //Given
         User tadek = new Millenials("Tadek");
         User czarek = new YGeneration("Czarek");
         User zenon = new ZGeneration("Zenon");
+        //When
 
-        String resultTadek = tadek.sharePost();
-        String resultCzarek = czarek.sharePost();
-        String resultZenon = zenon.sharePost();
-        System.out.println(resultTadek);
-        System.out.println(resultCzarek);
-        System.out.println("zenon" + resultZenon);
+        //Then
+        assertEquals("Snapchat", tadek.sharePost());
+        assertEquals("Facebook", czarek.sharePost());
+        assertEquals("Twitter", zenon.sharePost());
     }
 
 }
