@@ -1,10 +1,13 @@
-package patterns.bigmac;
+package patterns.builder.bigmac;
 
 import com.kodilla.patterns.builder.bigmac.BigMac;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.beans.ExceptionListener;
 import java.util.ArrayList;
+
+import static org.junit.Assert.assertEquals;
 
 public class BigMacTestSuite {
 
@@ -23,27 +26,14 @@ public class BigMacTestSuite {
                 .sesame(true)
                 .build();
 
-
         //When
 
-        System.out.println(bigMac);
 
         //Then
-        Assert.assertEquals(bigMac.getBun() , "BUN");
-        Assert.assertEquals(bigMac.getSauce() , "FIRSTSAUCE");
-        Assert.assertEquals(bigMac.getBurgers() , 12);
-        Assert.assertEquals(bigMac.getIngredients().size() , 3);
-
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(23);
-        list.add(333);
-        list.add(2123);
-        list.add(222);
-        list.add(330400);
-        list.add(21212);
-
-        list.trimToSize();
-
+        assertEquals(bigMac.getBun(), "BUN");
+        assertEquals(bigMac.getSauce(), "FIRSTSAUCE");
+        assertEquals(bigMac.getBurgers(), 12);
+        assertEquals(bigMac.getIngredients().size(), 3);
 
     }
 }

@@ -10,27 +10,27 @@ public class BigMac {
     private final List<String> ingredients = new ArrayList<>();
 
     public static class BigMacBuilder {
-        String bun;
-        String sauce;
-        int burgers;
+       private String bun;
+       private String sauce;
+        private int burgers;
         List<String> ingredients = new ArrayList<>();
-        public static String FIRSTSAUSE = "FIRSTSAUCE";
-        public static String SECONDSAUSE = "SECONDSAUSE";
-        public static String BUN = "BUN";
-        public static String ROLL = "ROLL";
-        public static String SALAT = "SALAT";
-        public static String ONION = "ONION";
-        public static String BECON = "BECON";
-        public static String CUCUMBER = "CUCUMBER";
-        public static String CHILI = "CHILI";
-        public static String Mushrooms = "MUSHROOMS";
-        public static String SHRIMPS = "SHRIMPS";
-        public static String CHEESE = "CHEESE";
-        public boolean SESAME = false;
+        public final static String FIRSTSAUSE = "FIRSTSAUCE";
+        public final static String SECONDSAUSE = "SECONDSAUSE";
+        public final static String BUN = "BUN";
+        public final static String ROLL = "ROLL";
+        public final static String SALAT = "SALAT";
+        public final static String ONION = "ONION";
+        public final static String BECON = "BECON";
+        public final static String CUCUMBER = "CUCUMBER";
+        public final static String CHILI = "CHILI";
+        public final static String Mushrooms = "MUSHROOMS";
+        public final static String SHRIMPS = "SHRIMPS";
+        public final static String CHEESE = "CHEESE";
+        public boolean sesame = false;
 
 
         public BigMacBuilder bun(String bun) {
-            if (bun.contains(BUN) || bun.contains(ROLL)) {
+            if (bun.equals(BUN) || bun.equals(ROLL)) {
                 this.bun = bun;
             } else {
                 throw new IllegalStateException("Bun can be " + BUN + " OR " + ROLL);
@@ -39,17 +39,16 @@ public class BigMac {
         }
 
         public BigMacBuilder sauce(String sauce) {
-            if (sauce.contains(FIRSTSAUSE) || sauce.contains(SECONDSAUSE)) {
+            if (sauce.equals(FIRSTSAUSE) || sauce.equals(SECONDSAUSE)) {
                 this.sauce = sauce;
             } else {
                 throw new IllegalStateException("Sauce can be only " + FIRSTSAUSE + " or " + SECONDSAUSE);
-
             }
             return this;
         }
 
         public BigMacBuilder sesame(boolean sesame) {
-            this.SESAME = sesame;
+            this.sesame = sesame;
             return this;
         }
 
@@ -60,20 +59,17 @@ public class BigMac {
 
         public BigMacBuilder ingredients(String ingredient) {
             this.ingredients.add(ingredient);
-
-
             return this;
         }
 
         public BigMac build() {
-            if (bun.contains(ROLL) && SESAME) {
+            if (bun.equals(ROLL) && sesame) {
                 throw new IllegalStateException("Only BUN can be with sesame");
             } else {
                 return new BigMac(bun, sauce, burgers, ingredients);
             }
         }
     }
-
 
     public String getBun() {
         return bun;
@@ -90,7 +86,6 @@ public class BigMac {
     public List<String> getIngredients() {
         return ingredients;
     }
-
 
     private BigMac(String bun, String sauce, int burgers, List<String> ingredients) {
         this.bun = bun;
