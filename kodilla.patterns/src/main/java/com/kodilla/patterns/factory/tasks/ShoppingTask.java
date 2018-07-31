@@ -1,11 +1,12 @@
 package com.kodilla.patterns.factory.tasks;
 
-public class ShoppingTask implements Tasks {
+public class ShoppingTask implements Task {
     private String whatToBuy;
     private String taskName;
     private double quantity;
+    private boolean isTaskExecuted = false;
 
-    ShoppingTask(String whatToBuy, String taskName, double quantity) {
+     ShoppingTask(String whatToBuy, String taskName, double quantity) {
         this.whatToBuy = whatToBuy;
         this.taskName = taskName;
         this.quantity = quantity;
@@ -27,12 +28,14 @@ public class ShoppingTask implements Tasks {
 
     @Override
     public void executeTask() {
+         if (whatToBuy != null && quantity > 0 )
         System.out.println("buing " + whatToBuy + " in quantity " + quantity);
-    }
+        isTaskExecuted = true;
+     }
 
     @Override
     public boolean isTaskExecuted() {
-        return quantity > 20;
+        return isTaskExecuted;
 
     }
 }
