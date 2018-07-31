@@ -10,8 +10,8 @@ public class BigMac {
     private final List<String> ingredients = new ArrayList<>();
 
     public static class BigMacBuilder {
-       private String bun;
-       private String sauce;
+        private String bun;
+        private String sauce;
         private int burgers;
         List<String> ingredients = new ArrayList<>();
         public final static String FIRSTSAUSE = "FIRSTSAUCE";
@@ -26,7 +26,7 @@ public class BigMac {
         public final static String Mushrooms = "MUSHROOMS";
         public final static String SHRIMPS = "SHRIMPS";
         public final static String CHEESE = "CHEESE";
-        public boolean sesame = false;
+        private boolean sesame = false;
 
 
         public BigMacBuilder bun(String bun) {
