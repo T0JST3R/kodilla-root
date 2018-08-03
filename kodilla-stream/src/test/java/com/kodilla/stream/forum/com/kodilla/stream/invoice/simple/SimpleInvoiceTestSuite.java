@@ -10,22 +10,30 @@ public class SimpleInvoiceTestSuite {
 
     @Test
 
-   public void testGetValueToPay(){
+    public void testGetValueToPay() {
 
-        //When
+        //Given
 
         SimpleInvoice invoice = new SimpleInvoice();
 
-        // Then
+        // When
 
-        invoice.addItem(new SimpleItem((new SimpleProduct("Product 1" , 12.10)) , 1 ));
-        invoice.addItem(new SimpleItem((new SimpleProduct("Product 1" , 12.10)) , 1 ));
-        invoice.addItem(new SimpleItem((new SimpleProduct("Product 1" , 12.10)) , 1.5 ));
+        invoice.addItem(new SimpleItem((new SimpleProduct("Product 1", 12.10)), 1));
+        invoice.addItem(new SimpleItem((new SimpleProduct("Product 1", 12.10)), 1));
+        invoice.addItem(new SimpleItem((new SimpleProduct("Product 2", 12.10)), 1.5));
+
+
+        for (SimpleItem item : invoice.getItems()) {
+
+            item.getProduct().getProductName();
+            item.getValue();
+
+        }
+
 
         //Then
 
-        Assert.assertEquals(42.35 , invoice.getValueToPay() , 0.0001);
-
+        Assert.assertEquals(42.35, invoice.getValueToPay(), 0.0001);
 
 
     }

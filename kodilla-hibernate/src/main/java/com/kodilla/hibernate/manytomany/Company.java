@@ -4,6 +4,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+@NamedNativeQuery(
+        name = "Company.findCompaniesByNameWithThreeChars",
+        query = "FROM Company WHERE SUBSTRING(NAME , 1 , 3)= :CHARS"
+)
 
 @Entity
 @Table(name = "COMPANIES")
@@ -19,7 +23,8 @@ public class Company {
     public Company(String name) {
         this.name = name;
     }
-    @ManyToMany(cascade = CascadeType.ALL , mappedBy = "companies")
+
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
     }

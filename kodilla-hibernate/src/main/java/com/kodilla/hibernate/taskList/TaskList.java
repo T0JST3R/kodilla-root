@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "TASKLIST")
 public class TaskList {
-    int id;
+    private int id;
     private String listName;
     private String description;
     private List<Task> tasks = new ArrayList<>();
