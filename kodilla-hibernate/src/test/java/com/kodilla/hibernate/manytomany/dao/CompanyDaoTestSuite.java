@@ -20,17 +20,17 @@ public class CompanyDaoTestSuite {
     CompanyDao companyDao;
     @Autowired
     EmployeeDao employeeDao;
+    Employee johnSmith = new Employee("John", "Smith");
+    Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+    Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+
+    Company softwareMachine = new Company("Software Machine");
+    Company dataMaesters = new Company("Data Maesters");
+    Company greyMatter = new Company("Grey Matter");
 
     @Test
     public void testSaveManyToMany() {
         //Given
-        Employee johnSmith = new Employee("John", "Smith");
-        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
-        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
-
-        Company softwareMachine = new Company("Software Machine");
-        Company dataMaesters = new Company("Data Maesters");
-        Company greyMatter = new Company("Grey Matter");
 
         softwareMachine.getEmployees().add(johnSmith);
         dataMaesters.getEmployees().add(stephanieClarckson);
@@ -70,9 +70,6 @@ public class CompanyDaoTestSuite {
     @Test
     public void testfindEmployeesWithName() {
         //Given
-        Employee johnSmith = new Employee("John", "Smith");
-        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
-        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
         employeeDao.save(johnSmith);
         employeeDao.save(stephanieClarckson);
         employeeDao.save(lindaKovalsky);
@@ -87,7 +84,9 @@ public class CompanyDaoTestSuite {
 
         //Then
         assertEquals(1, employee.size());
-        assertEquals("John", employee.get(0).getLastname());
+        assertEquals("John", employee.get(0).getFirstname());
+        assertEquals("Stephanie", employee.get(0).getFirstname());
+        assertEquals("Linda", employee.get(0).getFirstname());
 
         //Delete
         employeeDao.delete(id);
@@ -98,9 +97,6 @@ public class CompanyDaoTestSuite {
     @Test
     public void findCompaniesByNameWithThreeChars() {
         //Given
-        Employee johnSmith = new Employee("John", "Smith");
-        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
-        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
         Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");
@@ -132,11 +128,11 @@ public class CompanyDaoTestSuite {
 
         //Then
         assertEquals(1, companyList1.size());
-        assertEquals(1), companyList2.size();
-        assertEquals(1), companyList3.size();
-        assertEquals(companyList1.get(0).getName() , "Software Machine");
-        assertEquals(companyList2.get(0).getName() , "Data Maesters");
-        assertEquals(companyList3.get(0).getName() , "Grey Matter");
+        assertEquals(1, companyList2.size());
+        assertEquals(1, companyList3.size());
+        assertEquals(companyList1.get(0).getName(), "Software Machine");
+        assertEquals(companyList2.get(0).getName(), "Data Maesters");
+        assertEquals(companyList3.get(0).getName(), "Grey Matter");
 
 
         //Delete
