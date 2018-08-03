@@ -4,9 +4,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+
 @NamedNativeQuery(
         name = "Company.findCompaniesByNameWithThreeChars",
-        query = "FROM Company WHERE SUBSTRING(NAME , 1 , 3)= :CHARS"
+        query = "SELECT * FROM Company WHERE SUBSTRING(NAME , 1 , 3) = SUBSTRING(:CHARS , 1 , 3)"
 )
 
 @Entity
