@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FlightMap {
-    private Map<String, Boolean> flights;
+    private Map<String, Boolean> flights = new HashMap<>();
 
     public FlightMap() {
-        this.flights = new HashMap<>();
+
         flights.put("Poznan", true);
         flights.put("Wroclaw", false);
         flights.put("Berlin", true);

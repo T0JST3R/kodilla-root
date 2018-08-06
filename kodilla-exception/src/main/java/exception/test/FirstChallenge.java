@@ -25,7 +25,7 @@ public class FirstChallenge {
 
             System.out.println(result);
         } catch (ArithmeticException e) {
-            System.out.println("don't divie by 0! " + e);
+            System.out.println("don't divide by 0! " + e);
         }
     }
 }
