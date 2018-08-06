@@ -2,11 +2,11 @@ package rock_paper_scissors;
 
 
 public class GameRules {
-    int roundNumber;
-    int userPoints;
-    int computerPoints;
-    int computerChoice;
-    int maxRounds;
+    private int roundNumber;
+    private int userPoints;
+    private int computerPoints;
+    private Move computerChoice;
+    private int maxRounds;
 
     public int getMaxRounds() {
         return maxRounds;
@@ -50,7 +50,7 @@ public class GameRules {
         this.computerPoints = this.computerPoints + 1;
     }
 
-    public void setComputerChoice(int computerChoice) {
+    public void setComputerChoice(Move computerChoice) {
         this.computerChoice = computerChoice;
     }
 
@@ -68,7 +68,7 @@ public class GameRules {
         return computerPoints;
     }
 
-    public int getComputerChoice() {
+    public Move getComputerChoice() {
 
 
         return computerChoice;

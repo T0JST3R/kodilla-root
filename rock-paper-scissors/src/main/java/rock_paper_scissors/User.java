@@ -2,7 +2,7 @@ package rock_paper_scissors;
 
 public class User {
    private String username;
-    private int userChoice;
+    private Move userChoice = Move.ROCK;
     public boolean needChoice = true;
 
     public boolean isneedChoice() {
@@ -29,7 +29,7 @@ public class User {
         this.username = username;
     }
 
-    public void setUserChoice(int userChoice) {
+    public void setUserChoice(Move userChoice) {
         this.userChoice = userChoice;
     }
 
@@ -37,7 +37,7 @@ public class User {
         return username;
     }
 
-    public int getUserChoice(){
+    public Move getUserChoice(){
 
 
         return userChoice;
