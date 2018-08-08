@@ -1,5 +1,4 @@
 import rock_paper_scissors.GameRules;
-import rock_paper_scissors.Move;
 import rock_paper_scissors.User;
 
 import java.util.Random;

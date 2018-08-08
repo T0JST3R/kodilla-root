@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 @NamedQuery(
-        name = "Employee.findEmployeesWithName",
+        name = "Employee.findEmployeesWithLastName",
         query = "SELECT * FROM Employee WHERE lastname = :LASTNAME"
 )
 

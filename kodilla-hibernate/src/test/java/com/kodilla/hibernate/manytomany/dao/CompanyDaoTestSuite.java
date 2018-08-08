@@ -2,7 +2,6 @@ package com.kodilla.hibernate.manytomany.dao;
 
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,9 +77,9 @@ public class CompanyDaoTestSuite {
         int id2 = lindaKovalsky.getId();
 
         //When
-        List<Employee> employee = employeeDao.findEmployeesWithName("Smith");
-        List<Employee> employee1 = employeeDao.findEmployeesWithName("Clarckson");
-        List<Employee> employee2 = employeeDao.findEmployeesWithName("Kovalsky");
+        List<Employee> employee = employeeDao.findEmployeesByLastName("Smith");
+        List<Employee> employee1 = employeeDao.findEmployeesByLastName("Clarckson");
+        List<Employee> employee2 = employeeDao.findEmployeesByLastName("Kovalsky");
 
         //Then
         assertEquals(1, employee.size());
