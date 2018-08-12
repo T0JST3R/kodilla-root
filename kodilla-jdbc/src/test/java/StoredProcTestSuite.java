@@ -22,18 +22,18 @@ public class StoredProcTestSuite {
         int howMany = -1;
         String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM READERS WHERE VIP_LEVEL=\"not set\"";
         ResultSet rs = statement.executeQuery(sqlCheckTable);
-        if (rs.next()){
+        if (rs.next()) {
             howMany = rs.getInt("HOW_MANY");
         }
-        assertEquals(0 , howMany);
+        assertEquals(0, howMany);
     }
 
     @Test
-    public void testUpdateBestSellers() throws SQLException{
+    public void testUpdateBestSellers() throws SQLException {
         //Given
         DbManager dbManager = DbManager.getInstance();
         Statement statement = dbManager.getConnection().createStatement();
-        String sqlResetBestSellers  = "UPDATE BOOKS SET BESTSELLER = FALSE";
+        String sqlResetBestSellers = "UPDATE BOOKS SET BESTSELLER = FALSE";
         statement.executeUpdate(sqlResetBestSellers);
 
         //When
@@ -45,10 +45,10 @@ public class StoredProcTestSuite {
         int howMany = -1;
 
         ResultSet set = statement.executeQuery("SELECT * FROM BOOKS WHERE BESTSELLER = TRUE");
-        if (set.next()){
+        if (set.next()) {
             howMany = set.getInt("BESTSELLER");
 
-            assertEquals(1 , howMany , 0);
+            assertEquals(1, howMany, 0);
         }
     }
 }
