@@ -9,9 +9,9 @@ public class DbManager {
 
     private DbManager() throws SQLException {
         Properties connectionprops = new Properties();
-        connectionprops.put("user", "kodilla_user");
-        connectionprops.put("password", "kodilla_password");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kodilla_course?serverTimezone=Europe/Warsaw" + "&useSSL=False", connectionprops);
+        connectionprops.put("user", "root");
+        connectionprops.put("password", "Haslo");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kodilla_advancedmysql?serverTimezone=Europe/Warsaw" + "&useSSL=False", connectionprops);
     }
 
     public static  DbManager getInstance() throws SQLException{
