@@ -11,3 +11,5 @@ include 'kodilla-hibernate'
 include 'kodilla-spring'
 include 'kodilla-spring-web'
 include 'rock-paper-scissors'
+include 'kodilla_testing2'
+
