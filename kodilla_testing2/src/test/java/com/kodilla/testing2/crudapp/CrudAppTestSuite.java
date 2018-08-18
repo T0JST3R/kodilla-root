@@ -35,7 +35,7 @@ public class CrudAppTestSuite {
         generator = new Random();
     }
 
-    @Test
+
     public String createCrudAppTestTask() throws InterruptedException {
 
         String taskName = "Task number " + generator.nextInt(100000);
@@ -52,7 +52,7 @@ public class CrudAppTestSuite {
         return taskName;
     }
 
-    @Test
+
     public void sendTestTaskToTrello(String taskName) throws InterruptedException {
         driver.navigate().refresh();
         while (!driver.findElement(By.xpath("//select[1]")).isDisplayed()) ;
@@ -95,7 +95,8 @@ public class CrudAppTestSuite {
         Thread.sleep(2000);
 
         driverTrello.findElements(By.xpath("//a[@class=\"board-tile\"]")).stream()
-                .filter(aHref -> aHref.click());
+                .filter(aHref -> aHref.findElements(By.xpath(".//span[@title=\"Kodilla Board\"]")).size() > 0)
+                .forEach(aHref -> aHref.click());
 
         Thread.sleep(2000);
 
