@@ -79,6 +79,7 @@ public class CrudAppTestSuite {
         String taskName = createCrudAppTestTask();
         sendTestTaskToTrello(taskName);
         assertTrue(checkTaskExistsInTrello(taskName));
+        deleteTaskFromCrudd(taskName);
     }
 
     private boolean checkTaskExistsInTrello(String taskname) throws InterruptedException {
@@ -103,7 +104,7 @@ public class CrudAppTestSuite {
                 .collect(Collectors.toList())
                 .size() > 0;
         driverTrello.close();
-        deleteTaskFromCrudd(taskname);
+
 
         return result;
     }
