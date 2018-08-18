@@ -12,7 +12,6 @@ public class GoogleTestingApp {
     public static void main(String[] args) {
         WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
         driver.get("https://www.google.com");
-        ChromeDriver ddd = new ChromeDriver();
         WebElement searchField = driver.findElement(By.id(SEARCHFIELD));
         searchField.sendKeys("Kodilla");
         searchField.submit();
