@@ -29,14 +29,9 @@ public class Game {
             }
             gameRules.setComputerChoice(values()[random.nextInt(2)]);
             System.out.println("Round number " + gameRules.getRoundNumber());
-//0 - Kamien
-//1 - Papier
-//2 - Nozyce
 
-            if (user.getUserChoice() == ROCK && gameRules.getComputerChoice() == ROCK) {
-                System.out.println("Remis");
-                user.setNeedChoice(true);
-            } else if (user.getUserChoice() == ROCK && gameRules.getComputerChoice() == PAPER) {
+
+            if (user.getUserChoice() == ROCK && gameRules.getComputerChoice() == PAPER) {
                 gameRules.addComputerPoints();
                 System.out.println("Ty - Kamień . Komputer - Papier. :( ");
                 user.setNeedChoice(true);
@@ -49,11 +44,7 @@ public class Game {
             } else if (user.getUserChoice() == PAPER && gameRules.getComputerChoice() == ROCK) {
                 gameRules.addUserPoints();
                 user.setNeedChoice(true);
-            } else if (user.getUserChoice() == PAPER && gameRules.getComputerChoice() == PAPER) {
-                System.out.println("Remis");
-                user.setNeedChoice(true);
-
-            } else if (user.getUserChoice() == PAPER && gameRules.getComputerChoice() == SCISSORS) {
+            }  else if (user.getUserChoice() == PAPER && gameRules.getComputerChoice() == SCISSORS) {
 
                 gameRules.addComputerPoints();
                 user.setNeedChoice(true);
@@ -64,7 +55,7 @@ public class Game {
                 gameRules.addUserPoints();
                 user.setNeedChoice(true);
 
-            } else if (user.getUserChoice() == SCISSORS && gameRules.getComputerChoice() == SCISSORS) {
+            } else if (user.getUserChoice() == gameRules.getComputerChoice() ) {
                 System.out.println("Remis");
                 user.setNeedChoice(true);
 
